@@ -3,6 +3,7 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccess.Concrete.InMemory
@@ -43,14 +44,14 @@ namespace DataAccess.Concrete.InMemory
             productToUpdate.UnitsInStock = product.UnitsInStock;
         }
 
-        public List<Product> GetAll()
+        public List<Product> GetAll(Expression<Func<Product, bool>> filter = null)
         {
             return _products;
         }
 
-        public List<Product> GetAllByCategory(int categoryId)
+        public Product Get(Expression<Func<Product, bool>> filter)
         {
-            return _products.Where(p => p.CategoryId == categoryId).ToList();
+            throw new NotImplementedException();
         }
     }
 }

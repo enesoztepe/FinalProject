@@ -5,7 +5,7 @@ using System.Text;
 namespace Entities.Abstract
 {
     // IEntitiy implemente eden class bir veritabanı tablosudur.
-    public interface IEntitiy
+    public interface IEntity
     {
     }
 }
