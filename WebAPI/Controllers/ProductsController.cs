@@ -24,7 +24,6 @@ namespace WebAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            _productService = new ProductManager(new EfProductDal(),new CategoryManager(new EfCategoryDal()));
             var result = _productService.GetAll();
             if (result.Success)
             {

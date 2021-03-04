@@ -20,7 +20,7 @@ namespace Business.Concrete
     public class ProductManager : IProductService
     {
         IProductDal _productDal;
-        ICategoryService _categoryService;
+        ICategoryService _categoryService; 
         public ProductManager(IProductDal productDal, ICategoryService categoryService)
         {
             _productDal = productDal;
@@ -31,7 +31,7 @@ namespace Business.Concrete
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
-            IResult result = BusinessRules.Run(CheckIfProductNameExists(product.Name),CheckIfCategoryLimitExceded());
+            IResult result = BusinessRules.Run(CheckIfProductNameExists(product.Name), CheckIfCategoryLimitExceded()); 
             if (result != null)
                 return result;
             _productDal.Add(product);
@@ -86,5 +86,6 @@ namespace Business.Concrete
 
             return new SuccessResult();
         }
+
     }
 }
