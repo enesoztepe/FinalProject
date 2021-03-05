@@ -3,7 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Untilities.Security.Encryption
+namespace Core.Utilities
+    .Security.Encryption
 {
     public class SigningCredentialsHelper
     {
